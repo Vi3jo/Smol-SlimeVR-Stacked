@@ -1,6 +1,6 @@
 # Smol-SlimeVR-Stacked
 
-DIY набор трекеров SmolSlime
+DIY набор трекеров [SmolSlime](https://docs.slimevr.dev/smol-slimes)
 
 ## BOM
 
@@ -8,8 +8,8 @@ DIY набор трекеров SmolSlime
 
 1. Кнопка тактовая SMD - https://ali.click/28tfl1p
 2. NRF52840 - https://ali.click/39tfl1x
-3. IMU
-4. Аккумулятор - 
+3. IMU в идеале ICM-45686, второй в топе LSM6DSV
+4. Аккумулятор 401230 115mAh <br><img width="705" height="940" alt="изображение" src="https://github.com/user-attachments/assets/6b87ee30-76cd-402a-81d4-4f9a4eccb9c0" />
 
 ### Приемник
 
@@ -22,7 +22,7 @@ DIY набор трекеров SmolSlime
 2. Корпус x6 - stl/tracker case/Body_v4.1.stl
 3. Крышка x6 - stl/tracker case/lid_v4.1.stl
 4. Держатель трекера x6 - stl/tracker case/Tray_v4.1.stl <br> Либо если планируется использовать дял грудного датчика крепление экшнкамеры<br>Держатель трекера x5 - stl/tracker case/Tray_v4.1.stl<br>Крепеж для экшнкамеры x1 - stl/tracker case/GoPro_Chest_Mount_4.1.stl
-5. Пряжки 
+5. Пряжки x6 - stl/brackles/Brackles_30MM_A.stl и stl/brackles/Brackles_30MM_B.stl
 
 ### Докстанция
 
@@ -30,7 +30,14 @@ DIY набор трекеров SmolSlime
 2. Нижняя часть - stl/dock/Dock Base.stl
 3. USB Type-C разъем папа x10 - https://ali.click/a7tfl13
 4. USB Type-C разъем мама x1 - https://ali.click/q7tfl1q
-5. Конденсатор x1 -
-6. Термопредохранитель x10 -
+5. Конденсатор 10В-1000мкФ x1
+6. Термопредохранитель 0.5А 72В RXEF050 x10
 7. Макетная плата
-8. Винт M3 DIN 
+8. Винт M3*20 DIN 912
+9. Вплавляемая вставка M3
+
+## Сборка
+
+### Трекер
+
+<img width="650" height="789" alt="tracker" src="https://github.com/user-attachments/assets/dd938169-036a-4fd5-bfd2-0cf06dee411b" />
