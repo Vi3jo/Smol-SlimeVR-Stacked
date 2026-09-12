@@ -1,43 +1,116 @@
 # Smol-SlimeVR-Stacked
 
-DIY набор трекеров [SmolSlime](https://docs.slimevr.dev/smol-slimes)
+DIY-набор трекеров [SmolSlime](https://docs.slimevr.dev/smol-slimes).
 
 ## BOM
 
 ### Трекер
 
-1. Кнопка тактовая SMD - https://ali.click/28tfl1p
-2. NRF52840 - https://ali.click/39tfl1x
-3. IMU в идеале ICM-45686, второй в топе LSM6DSV
+1. Кнопка тактовая SMD — [AliExpress](https://ali.click/28tfl1p)
+2. NRF52840 — [AliExpress](https://ali.click/39tfl1x)
+3. IMU: в идеале ICM-45686, второй в топе — LSM6DSV.
 4. Аккумулятор 401230 115mAh <br><img width="705" height="940" alt="изображение" src="https://github.com/user-attachments/assets/6b87ee30-76cd-402a-81d4-4f9a4eccb9c0" />
 
 ### Приемник
 
-1. Holyiot nRF52840 BLE - https://ali.click/datfl1r
+1. Holyiot nRF52840 BLE — [AliExpress](https://ali.click/datfl1r)
 
 ### Корпус и крепление
 
-Под набор из 6 трекеров понадобится следующие компоненты:
-1. Эластичная лента 30мм ширина, длина 2 метра - https://ali.click/1jsfl1o (ссылка как пример, из двух заказов по этой одна лента пришла соединенная степлером из двух) <br><img width="640" height="640" alt="лента" src="https://github.com/user-attachments/assets/62ebed95-2900-4e7a-87fa-56af799f2bcd" />
-2. Корпус x6 - stl/tracker case/Body_v4.1.stl
-3. Крышка x6 - stl/tracker case/lid_v4.1.stl
-4. Держатель трекера x6 - stl/tracker case/Tray_v4.1.stl <br> Либо если планируется использовать дял грудного датчика крепление экшнкамеры<br>Держатель трекера x5 - stl/tracker case/Tray_v4.1.stl<br>Крепеж для экшнкамеры x1 - stl/tracker case/GoPro_Chest_Mount_4.1.stl
-5. Пряжки x6 - stl/brackles/Brackles_30MM_A.stl и stl/brackles/Brackles_30MM_B.stl
+Для набора из 6 трекеров понадобятся следующие компоненты:
 
-### Докстанция
+1. Эластичная лента (ширина 30 мм, длина 2 м) — [AliExpress](https://ali.click/1jsfl1o) *(ссылка как пример; из двух заказов одна лента пришла соединенная степлером)*.<br><img width="640" height="640" alt="лента" src="https://github.com/user-attachments/assets/62ebed95-2900-4e7a-87fa-56af799f2bcd" />
+2. Корпус x6 — `stl/tracker case/Body_v4.1.stl`
+3. Крышка x6 — `stl/tracker case/lid_v4.1.stl`
+4. Держатель трекера x6 — `stl/tracker case/Tray_v4.1.stl` <br>*(Либо, если планируется использовать для грудного датчика: держатель трекера x5 — `Tray_v4.1.stl`, крепеж для экшнкамеры x1 — `GoPro_Chest_Mount_4.1.stl`)*.
+5. Пряжки x6 — `stl/brackles/Brackles_30MM_A.stl` и `Brackles_30MM_B.stl`
 
-1. Верхняя часть - stl/dock/Dock Top.stl
-2. Нижняя часть - stl/dock/Dock Base.stl
-3. USB Type-C разъем папа x10 - https://ali.click/a7tfl13
-4. USB Type-C разъем мама x1 - https://ali.click/q7tfl1q
-5. Конденсатор 10В-1000мкФ x1
-6. Термопредохранитель 0.5А 72В RXEF050 x10
+### Док-станция
+
+1. Верхняя часть — `stl/dock/Dock Top.stl`
+2. Нижняя часть — `stl/dock/Dock Base.stl`
+3. USB Type-C разъём («папа») x10 — [AliExpress](https://ali.click/a7tfl13)
+4. USB Type-C разъём («мама») x1 — [AliExpress](https://ali.click/q7tfl1q)
+5. Конденсатор 10В 1000мкФ x1
+6. Самовосстанавливающийся предохранитель 0.5А 72В RXEF050 x10
 7. Макетная плата
-8. Винт M3*20 DIN 912
+8. Винт M3x20
 9. Вплавляемая вставка M3
 
 ## Сборка
 
+*Все детали печатались из PLA пластика на FDM-принтере.*
+
 ### Трекер
 
+Подробная инструкция сборки доступна на [сайте проекта](https://docs.slimevr.dev/smol-slimes/hardware/smol-tracker-soldering.html). 
+*Я собирал на LSM6DSV, так как доставку ICM-45686 отменяли 7 раз.*
+
 <img width="650" height="789" alt="tracker" src="https://github.com/user-attachments/assets/dd938169-036a-4fd5-bfd2-0cf06dee411b" />
+
+> **Совет:** рекомендуется использовать небольшой кусок провода в качестве внешней антенны для улучшения связи трекеров.
+
+**Порядок сборки:**
+1. Припаять кнопку к NRF.
+2. Впаять ряд пинов в IMU.
+3. Приклеить каптон на нижнюю часть IMU.
+4. Установить последний пин `INT1`.
+5. Вставить IMU в NRF.
+6. Припаять пин `INT1` к IMU.
+7. Припаять IMU к NRF.
+8. Откусить излишки пинов.
+9. Проверить мультиметром корректность сборки.
+10. Припаять аккумулятор.
+11. Уложить компоненты в корпус.<img width="1265" height="986" alt="tracker (2)" src="https://github.com/user-attachments/assets/eccce37d-3bd5-43f5-8e2c-33fd43720434" />
+12. Выполнить прошивку.
+13. Отмерить эластичную ленту по месту и отрезать.
+14. Обработать край зажигалкой, чтобы не осыпался.
+15. Вставить ленту гладкой стороной наружу в держатель трекера *(три волнистые линии внутри улучшают сцепление с телом)*.
+16. Продеть ленту в пряжки.
+
+### Приемник
+
+Сборка не требуется.
+
+### Док-станция *(опционально)*
+
+1. Вплавить резьбовые вставки в верхнюю часть корпуса.
+2. Вставить разъемы USB Type-C («папа») в верхнюю часть *(желательно ориентировать плюсовым выводом в одну сторону)*.
+3. Зафиксировать стыки каплей суперклея.
+4. Вставить разъем USB Type-C («мама») в отверстие на торце.
+5. Впаять 10 предохранителей в макетную плату для защиты.
+6. Впаять конденсатор между линиями `+` и `-` для сглаживания просадок напряжения при одновременном включении нескольких трекеров.<img width="1520" height="763" alt="Снимок экрана 2026-09-12 130329" src="https://github.com/user-attachments/assets/9cb04a75-7f5e-4a4c-9de3-e227a554a927" />
+7. Припаять плюсовые провода от каждого разъема к выходам предохранителей.
+8. Подключить минусовые провода разъемов к общей минусовой шине на плате.
+9. Припаять плюсовой и минусовой провода от разъема USB Type-C («мама») к соответствующим шинам питания платы.
+10. Зафиксировать плату на двусторонний скотч.
+11. Проверить правильность монтажа мультиметром.
+12. Установить нижнюю часть корпуса.
+13. Закрутить крепежные винты.
+
+<img width="959" height="652" alt="Снимок экрана 2026-09-12 130405" src="https://github.com/user-attachments/assets/a10a5178-8f67-4fa3-a6d5-eb54cd5512bf" />
+
+## Прошивка
+
+### Трекер
+
+В ОС Windows модуль NRF определяется как съемный диск: достаточно просто скопировать туда файл [прошивки](https://github.com/Shine-Bright-Meow/SlimeNRF-Firmware-CI/releases/download/latest/SlimeNRF_Tracker_NoSleep_SPI_StackedSmol.uf2).
+
+### Приемник
+
+Для прошивки потребуется софт nRF connect а точнее его часть Programmer, в текущих условиях скачать и запустить его не так то просто для это потребуется специальный софт предоставляющий альтернативный способ подключения к интернету.
+
+Приемник переводится в режим прошивки комплектным магнитом, поднеся его к светодиоду 
+
+Для прошивки потребуется утилита **nRF Connect for Desktop** (компонент **Programmer**). 
+1. Переведите приемник в режим прошивки, поднеся комплектный магнит к светодиоду.
+2. Используйте файл [прошивки приемника](https://github.com/Shine-Bright-Meow/SlimeNRF-Firmware-CI/releases/download/latest/SlimeNRF_Holyiot_Dongle_Receiver.hex).
+
+### Док-станция
+
+Устройство полностью аналоговое, прошивка не требуется.
+
+## Настройка
+
+1. Для настройки рекомендуется использовать [SmolSlimeConfigurator](https://github.com/ICantMakeThings/SmolSlimeConfigurator/tree/main). Подробное описание работы доступно в [документации](https://docs.slimevr.dev/smol-slimes/firmware/SmolSlimeConfigurator.html).
+2. Установите официальное приложение [SlimeVR в Steam](https://store.steampowered.com/app/3245490/SlimeVR/) и следуйте подсказкам мастера настройки.
